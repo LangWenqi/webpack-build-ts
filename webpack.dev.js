@@ -2,7 +2,7 @@ const path = require('path');
 const  webpack = require('webpack');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
-module.exports = () => ({
+module.exports = (env) => ({
   mode: 'development',
   entry: {
     index: './src/index.ts'

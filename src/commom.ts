@@ -1,7 +1,12 @@
+import { resolve } from "path"
+
 interface Ass {
   name: string
 }
 
 export const setup = (aa: Ass) => {
-  console.log(33323555234)
+  return new Promise((resolve => {
+    console.log(999)
+    resolve(999);
+  }))
 }
