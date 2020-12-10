@@ -1,0 +1,1 @@
+export const Injectable = (data: any = {}): ClassDecorator => target => {};

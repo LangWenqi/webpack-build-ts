@@ -6,7 +6,7 @@ const TerserPlugin = require('terser-webpack-plugin');
 module.exports = (env) => ({
   mode: env.NODE_ENV === 'watch' ? 'development' : 'production',
   entry: {
-    index: env.NODE_ENV === 'watch' ? './src/main.ts' : ['@babel/polyfill', './src/main.ts']
+    index: env.NODE_ENV === 'watch' ? './src/main.ts' : ['es6-promise', './src/main.ts']
   },
   output: {
     path: path.resolve(__dirname, "./dist"),
