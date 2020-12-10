@@ -5,7 +5,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 module.exports = (env) => ({
   mode: 'development',
   entry: {
-    index: './src/index.ts'
+    index: './src/main.ts'
   },
   output: {
     path: path.resolve(__dirname, "./dist"),
@@ -48,7 +48,9 @@ module.exports = (env) => ({
   resolve: {
     extensions: [ '.tsx', '.ts', '.jsx', '.js' ],
     alias: {
-      '@': path.resolve(__dirname, './src')
+      '@': path.resolve(__dirname, './src'),
+      '@decorators': path.resolve(__dirname, './src/decorators/index.ts'),
+      '@factories': path.resolve(__dirname, './src/factories/index.ts')
     }
   },
   devtool: 'eval-source-map'

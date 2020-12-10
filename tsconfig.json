@@ -4,14 +4,26 @@
     "noImplicitAny": true,
     "module": "es6",
     "target": "es5",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "types": ["reflect-metadata", "node"],
     "jsx": "react",
     "sourceMap": true,
-    "allowJs": true,
+    "allowJs": false,
+    "checkJs": false,
+    "removeComments": true,
     "baseUrl": ".",
     "declaration": true,
+    "alwaysStrict": true,
     "paths": {
       "@/*": [
         "src/*"
+      ],
+      "@decorators": [
+        "src/decorators/index.ts"
+      ],
+      "@factories": [
+        "src/factories/index.ts"
       ]
     },
     "lib": [

@@ -6,7 +6,7 @@ const TerserPlugin = require('terser-webpack-plugin');
 module.exports = (env) => ({
   mode: env.NODE_ENV === 'watch' ? 'development' : 'production',
   entry: {
-    index: env.NODE_ENV === 'watch' ? './src/index.ts' : ['@babel/polyfill', './src/index.ts']
+    index: env.NODE_ENV === 'watch' ? './src/main.ts' : ['@babel/polyfill', './src/main.ts']
   },
   output: {
     path: path.resolve(__dirname, "./dist"),
@@ -22,7 +22,7 @@ module.exports = (env) => ({
       new TerserPlugin({
         terserOptions: {
           compress: {
-            drop_console: true,
+            drop_console: false,
             drop_debugger: true
           },
           output: {
@@ -59,7 +59,9 @@ module.exports = (env) => ({
   resolve: {
     extensions: [ '.tsx', '.ts', '.jsx', '.js' ],
     alias: {
-      '@': path.resolve(__dirname, './src')
+      '@': path.resolve(__dirname, './src'),
+      '@decorators': path.resolve(__dirname, './src/decorators/index.ts'),
+      '@factories': path.resolve(__dirname, './src/factories/index.ts')
     }
   },
   devtool: env.NODE_ENV === 'watch' ? 'eval-source-map' : 'none'
